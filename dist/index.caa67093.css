@@ -1,4 +1,72 @@
-.myFlix {
-  color: steelblue;
+* {
+  font-family: Raleway, sans-serif;
+  line-height: 1.8;
+}
+
+body {
+  background-color: rgb(9, 27, 73);
+}
+.movie-view {
+  color: rgb(245, 245, 245);
+}
+
+.label {
+  font-weight: bold;
+}
+#login-form {
+  background-color: rgb(9, 27, 73);
+  color: rgb(245, 245, 245);
+  position: absolute;
+  top: 30%;
+}
+
+.director-view {
+  color: rgb(245, 245, 245);
+}
+
+.label {
+  font-weight: bold;
+}
+.genre-view {
+  color: rgb(245, 245, 245);
+}
+
+.label {
+  font-weight: bold;
+}
+#profile-form {
+  background-color: rgb(9, 27, 73);
+  color: rgb(245, 245, 245);
+  position: absolute;
+  top: 30%;
+}
+
+#profile-form #movie-card {
+  color: rgb(9, 27, 73);
+}
+
+.main-view {
+  row-gap: 30px;
+}
+
+#movie-card {
+  background-color: rgb(245, 245, 245);
+  color: rgb(9, 27, 73);
+  height: 100%;
+}
+
+#card-title {
+  font-weight: bold;
+}
+
+.button {
+  border: 1px solid rgb(9, 27, 73);
+  color: rgb(9, 27, 73);
+}
+
+.button:hover {
+  background-color: rgb(9, 27, 73);
+  border: 1px solid rgb(9, 27, 73);
+  color: rgb(245, 245, 245);
 }
 /*# sourceMappingURL=index.caa67093.css.map */
