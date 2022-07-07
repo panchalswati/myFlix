@@ -37,7 +37,7 @@ export class MovieCard extends React.Component {
                     <Card.Title id="card-title">{movie.Title}</Card.Title>
                     <Card.Text>{movie.Description}</Card.Text>
                     <Link to={`/movies/${movie._id}`}>
-                        <Button className="button" variant="outline-primary" size="sm">Open</Button>
+                        <Button className="button" variant="link" >Open</Button>
                     </Link>
                     <Button className="button ml-2" variant="outline-primary" size="sm" onClick={() => this.addToFavoriteList(movie._id)}>Add</Button>
                 </Card.Body>
@@ -62,4 +62,5 @@ MovieCard.propTypes = {
             Description: PropTypes.string.isRequired
         })
     }).isRequired,
+    onMovieClick: PropTypes.func.isRequired
 };
