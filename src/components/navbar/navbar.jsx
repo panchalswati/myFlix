@@ -32,7 +32,7 @@ export function Navbar() {
 
                 <Nav className="ml-auto">
                     {isAuth() && (
-                        <Nav.Link href={`/users/${users}`}>{users}</Nav.Link>
+                        <Nav.Link href={`/users/${user}`}>{user}</Nav.Link>
                     )}
                     {isAuth() && (
                         <Button variant="link" onClick={handleLogOut}>Logout</Button>
