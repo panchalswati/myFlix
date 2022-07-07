@@ -8,38 +8,38 @@ import { Button, Col, Container, Form, Row } from 'react-bootstrap/';
 import './registration-view.scss';
 
 export function RegistrationView(props) {
-    const [Username, setUsername] = useState('');
-    const [Password, setPassword] = useState('');
-    const [Email, setEmail] = useState('');
-    const [Birthdate, setBirthdate] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [birthdate, setBirthdate] = useState('');
     const [values, setValues] = useState({
-        UsernameErr: '',
-        PasswordErr: '',
-        EmailErr: '',
+        usernameErr: '',
+        passwordErr: '',
+        emailErr: '',
     });
 
     // validate user inputs
     const validate = () => {
         let isReq = true;
-        if (!Username) {
-            setValues({ ...values, UsernameErr: 'Username required' });
+        if (!username) {
+            setValues({ ...values, usernameErr: 'Username required' });
             isReq = false;
-        } else if (Username.length < 2) {
-            setValues({ ...values, UsernameErr: 'Username must be at least 2 characters long' });
-            isReq = false;
-        }
-        if (!Password) {
-            setValues({ ...values, PasswordErr: 'Password required' });
-            isReq = false;
-        } else if (Password.length < 6) {
-            setValues({ ...values, PasswordErr: 'Password must be at least 6 characters long' });
+        } else if (username.length < 2) {
+            setValues({ ...values, usernameErr: 'Username must be at least 2 characters long' });
             isReq = false;
         }
-        if (!Email) {
-            setValues({ ...values, EmailErr: 'Email required' });
+        if (!password) {
+            setValues({ ...values, passwordErr: 'Password required' });
             isReq = false;
-        } else if (Email.indexOf('@') === -1) {
-            setValues({ ...values, EmailErr: 'Enter valid email' });
+        } else if (password.length < 6) {
+            setValues({ ...values, passwordErr: 'Password must be at least 6 characters long' });
+            isReq = false;
+        }
+        if (!email) {
+            setValues({ ...values, emailErr: 'Email required' });
+            isReq = false;
+        } else if (email.indexOf('@') === -1) {
+            setValues({ ...values, emailErr: 'Enter valid email' });
             isReq = false;
         }
         return isReq;
@@ -50,10 +50,10 @@ export function RegistrationView(props) {
         const isReq = validate();
         if (isReq) {
             axios.post('https://myflix-movies-heroku.herokuapp.com/users', {
-                Username: Username,
-                Password: Password,
-                Email: Email,
-                Birthdate: Birthdate
+                Username: username,
+                Password: password,
+                Email: email,
+                Birthdate: birthdate
             })
                 .then(response => {
                     const data = response.data;
@@ -72,32 +72,33 @@ export function RegistrationView(props) {
         <Container id="registration-form">
             <Row className="justify-content-center">
                 <Col sm="10" md="8" lg="6">
-                    <Form>
+                    <Form><h3>Sign Up</h3><p></p>
                         <Form.Group controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
-                            <Form.Control type="text" value={u = Username} onChange={e => setUsername(e.target.value)} placeholder="Username" required />
+                            <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" required />
                             {/* display validation error */}
-                            {values.UsernameErr && <p>{values.UsernameErr}</p>}
+                            {values.usernameErr && <p>{values.usernameErr}</p>}
                         </Form.Group>
                         <Form.Group controlId="formPassword">
                             <Form.Label>Password:</Form.Label>
-                            <Form.Control type="password" value={Password} onChange={e => setPassword(e.target.value)} placeholder="Password" required />
+                            <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" required />
                             {/* display validation error */}
-                            {values.PasswordErr && <p>{values.PasswordErr}</p>}
+                            {values.passwordErr && <p>{values.passwordErr}</p>}
                         </Form.Group>
                         <Form.Group controlId="formEmail">
                             <Form.Label>Email:</Form.Label>
-                            <Form.Control type="text" value={Email} onChange={e => setEmail(e.target.value)} placeholder="your@mail.com" required />
+                            <Form.Control type="text" value={email} onChange={e => setEmail(e.target.value)} placeholder="your@mail.com" required />
                             {/* display validation error */}
-                            {values.EmailErr && <p>{values.EmailErr}</p>}
+                            {values.emailErr && <p>{values.emailErr}</p>}
                         </Form.Group>
                         <Form.Group controlId="Birthdate">
                             <Form.Label>Birthdate:</Form.Label>
-                            <Form.Control type="text" value={Birthdate} onChange={e => setBirthdate(e.target.value)} placeholder="YYYY-MM-DD" />
+                            <Form.Control type="date" value={birthdate} onChange={e => setBirthdate(e.target.value)} placeholder="YYYY-MM-DD" />
                         </Form.Group>
                         <Row className="mt-3 justify-content-start">
                             <Col sm="10" md="8" lg="6">
-                                <Button type="submit" onClick={() => handleSubmit()}>Register</Button>
+                                <Button type="submit" onClick={handleSubmit}>Register</Button><p></p>
+                                <p>Already registered <Link to={'/'}>Sign In</Link>here</p>
                             </Col>
                         </Row>
                     </Form>
