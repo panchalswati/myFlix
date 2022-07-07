@@ -8,18 +8,18 @@ import { Button, Col, Container, Form, Row } from 'react-bootstrap/';
 import './login-view.scss';
 
 export function LoginView(props) {
-    const [Username, setUsername] = useState('');
-    const [Password, setPassword] = useState('');
-    const [UsernameErr, setUsernameErr] = useState('');
-    const [PasswordErr, setPasswordErr] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [usernameErr, setUsernameErr] = useState('');
+    const [passwordErr, setPasswordErr] = useState('');
 
     // validate user inputs
     const validate = () => {
         let isReq = true;
-        if (!Username) {
+        if (!username) {
             setUsernameErr('Username required');
             isReq = false;
-        } else if (Username.length < 2) {
+        } else if (username.length < 2) {
             setUsernameErr('Username must be at least 2 characters long');
             isReq = false;
         }
@@ -39,8 +39,8 @@ export function LoginView(props) {
         if (isReq) {
             // Send a request to the server for authentication
             axios.post('https://myflix-movies-heroku.herokuapp.com/login', {
-                Username: Username,
-                Password: Password
+                Username: username,
+                Password: password
             })
                 .then(response => {
                     const data = response.data;
@@ -59,19 +59,19 @@ export function LoginView(props) {
                     <Form>
                         <Form.Group controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
-                            <Form.Control type="text" onChange={e => setUsername(e.target.value)} placeholder="Username" />
+                            <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Enter username" />
                             {/* display validation error */}
-                            {UsernameErr && <p>{UsernameErr}</p>}
+                            {usernameErr && <p>{usernameErr}</p>}
                         </Form.Group>
                         <Form.Group controlId="formPassword" className="mt-3">
                             <Form.Label>Password:</Form.Label>
-                            <Form.Control type="password" onChange={e => setPassword(e.target.value)} placeholder="Password" />
+                            <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
                             {/* display validation error */}
-                            {PasswordErr && <p>{PasswordErr}</p>}
+                            {passwordErr && <p>{passwordErr}</p>}
                         </Form.Group>
                         <Row className="mt-3 justify-content-start">
                             <Col sm="10" md="8" lg="6">
-                                <Button variant="warning" type="submit" onClick={() => handleSubmit()}>Login</Button>
+                                <Button variant="warning" type="submit" onClick={handleSubmit}>Login</Button>
                             </Col>
                         </Row>
                     </Form>
