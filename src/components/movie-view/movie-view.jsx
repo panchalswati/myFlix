@@ -36,10 +36,10 @@ export class MovieView extends React.Component {
                     <Col className="value">{movie.Description}</Col>
                 </Row>
                 <Link to={`/directors/${movie.Director.Name}`}>
-                    <Button className="d-block mt-3" variant="info">Director</Button>
+                    <Button className="d-block mt-3" variant="link">Director</Button>
                 </Link>
                 <Link to={`/genres/${movie.Genre.Name}`}>
-                    <Button className="d-block mt-3" variant="info">Genre</Button>
+                    <Button className="d-block mt-3" variant="link">Genre</Button>
                 </Link>
                 <Button className="d-block mt-3" onClick={() => { onBackClick(null); }} variant="warning">Back</Button>
             </Container>
