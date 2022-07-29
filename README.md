@@ -12,9 +12,18 @@ Technical Requirements:
 ● The application contains a mix of class components and function components
 ● The application is hosted online ( https://myflix-site.netlify.app )
 
-ScreenShots
-Fav-movie-alert.png
+ScreenShots:
 Main-view.png
+![Main-view](https://user-images.githubusercontent.com/102805610/181764077-d8e59aea-4fc9-41dc-b65c-dede78d1a688.png)
+
 movie-view.png
-update-view.png
+![movie-view](https://user-images.githubusercontent.com/102805610/181764122-eab7e95d-28c5-49ce-91bb-8e4521fc72b4.png)
+
 user-view.png
+![user-view](https://user-images.githubusercontent.com/102805610/181764177-203200a2-fe78-4666-ae72-64369dd44173.png)
+
+update-view.png
+![update-view](https://user-images.githubusercontent.com/102805610/181764213-0f7c4a66-d3da-4e74-8fed-67b63ee9ee03.png)
+
+Fav-movie-alert.png
+![Fav-movie-alert](https://user-images.githubusercontent.com/102805610/181764241-15d582ae-7362-4def-b77c-e2517c91b28c.png)
