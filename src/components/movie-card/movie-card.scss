@@ -1,24 +1,56 @@
-.main-view {
-    row-gap: 30px;
+.cards {
+    height: 540px;
+    margin: 30px 5px;
 }
 
-#movie-card {
-    background-color: rgb(245, 245, 245);
-    color: rgb(9, 27, 73);
-    height: 100%;
+.cards:hover {
+    box-shadow: 0 0 1px 1px rgb(220, 220, 220);
+    background-color: rgb(250, 251, 255);
 }
 
-#card-title {
-    font-weight: bold;
+.cards-img {
+    height: 300px;
+    object-fit: contain;
 }
 
-.button {
-    border: 1px solid rgb(9, 27, 73);
-    color: rgb(9, 27, 73);
+.cards-img:hover {
+    box-shadow: 0 0 5px 1px rgb(127, 127, 128);
 }
 
-.button:hover {
-    background-color: rgb(9, 27, 73);
-    border: 1px solid rgb(9, 27, 73);
-    color: rgb(245, 245, 245);
+.cards-title {
+    height: 50px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.div-button-add-favs {
+    text-align: right;
+}
+
+.text-link:hover {
+    font-weight: 500;
+}
+
+@media all and (max-width: 575.98px) {
+    .cards {
+        height: 480px;
+    }
+}
+
+@media all and (min-width: 575.99px) and (max-width: 767.99px) {
+    .cards {
+        height: 540px;
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 991.98px) {
+    .cards {
+        height: 580px;
+    }
+}
+
+@media all and (min-width: 991.99px) {
+    .cards {
+        height: 530px;
+    }
 }
