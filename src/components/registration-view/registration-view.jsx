@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-
-import { Button, Col, Container, Form, Row } from 'react-bootstrap/';
-
-import './registration-view.scss';
+import axios from 'axios';
+import { Form, Button, Card, Container, Col, Row, CardGroup } from 'react-bootstrap';
+import './registration-view.scss'
 
 export function RegistrationView(props) {
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
@@ -18,21 +16,20 @@ export function RegistrationView(props) {
         emailErr: '',
     });
 
-    // validate user inputs
     const validate = () => {
         let isReq = true;
         if (!username) {
             setValues({ ...values, usernameErr: 'Username required' });
             isReq = false;
-        } else if (username.length < 2) {
-            setValues({ ...values, usernameErr: 'Username must be at least 2 characters long' });
+        } else if (username.length < 5) {
+            setValues({ ...values, usernameErr: 'Username must be at least 5 characters long' });
             isReq = false;
         }
         if (!password) {
             setValues({ ...values, passwordErr: 'Password required' });
             isReq = false;
-        } else if (password.length < 6) {
-            setValues({ ...values, passwordErr: 'Password must be at least 6 characters long' });
+        } else if (password.match(/[^0-9a-z]/i)) {
+            setValues({ ...values, passwordErr: 'Password may only contain letters and digits' });
             isReq = false;
         }
         if (!email) {
@@ -53,59 +50,57 @@ export function RegistrationView(props) {
                 Username: username,
                 Password: password,
                 Email: email,
-                Birthdate: birthdate
+                Birthdate: birthdate,
+                FavoriteMovies: []
             })
                 .then(response => {
                     const data = response.data;
                     console.log(data);
-                    alert('Registration successful, please login.');
+                    alert('Registration successful, please login.')
+                    //_self keeps page from opening into a new tab
                     window.open('/', '_self');
                 })
-                .catch(response => {
-                    console.error(response);
-                    alert('Unable to register');
+                .catch(error => {
+                    console.log('error');
+                    alert('Unable to register.')
                 });
         }
     };
 
     return (
-        <Container id="registration-form">
+        <Container className="registration-form">
             <Row className="justify-content-center">
-                <Col sm="10" md="8" lg="6">
-                    <Form><h3>Sign Up</h3><p></p>
-                        <Form.Group controlId="formUsername">
+                <Col>
+                    <Form className="registration-form bg-col lining">
+                        <Form.Group className="mb-4" controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
                             <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" required />
-                            {/* display validation error */}
                             {values.usernameErr && <p>{values.usernameErr}</p>}
                         </Form.Group>
-                        <Form.Group controlId="formPassword">
+                        <Form.Group className="mb-4" controlId="formPassword">
                             <Form.Label>Password:</Form.Label>
                             <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" required />
-                            {/* display validation error */}
                             {values.passwordErr && <p>{values.passwordErr}</p>}
                         </Form.Group>
-                        <Form.Group controlId="formEmail">
+                        <Form.Group className="mb-4" controlId="formEmail">
                             <Form.Label>Email:</Form.Label>
                             <Form.Control type="text" value={email} onChange={e => setEmail(e.target.value)} placeholder="your@mail.com" required />
-                            {/* display validation error */}
                             {values.emailErr && <p>{values.emailErr}</p>}
                         </Form.Group>
-                        <Form.Group controlId="Birthdate">
+                        <Form.Group className="mb-4" controlId="formBirthdate">
                             <Form.Label>Birthdate:</Form.Label>
-                            <Form.Control type="date" value={birthdate} onChange={e => setBirthdate(e.target.value)} placeholder="YYYY-MM-DD" />
+                            <Form.Control type="Date" value={birthdate} onChange={e => setBirthdate(e.target.value)} placeholder="YYYY-MM-DD" />
                         </Form.Group>
-                        <Row className="mt-3 justify-content-start">
+                        <Row className="mt-4 justify-content-start">
                             <Col sm="10" md="8" lg="6">
-                                <Button type="submit" onClick={handleSubmit}>Register</Button><p></p>
-                                <p>Already registered <Link to={'/'}>Sign In</Link>here</p>
+                                <Button className="reg-button" type="submit" onClick={handleSubmit}>Register</Button>
                             </Col>
                         </Row>
                     </Form>
                 </Col>
             </Row>
         </Container>
-    );
+    )
 }
 
 RegistrationView.propTypes = {
@@ -113,6 +108,6 @@ RegistrationView.propTypes = {
         Username: PropTypes.string.isRequired,
         Password: PropTypes.string.isRequired,
         Email: PropTypes.string.isRequired,
+        Birthdate: PropTypes.number.isRequired,
     })
-    //onRegisterIn: PropTypes.func.isRequired
 };
