@@ -1,10 +1,30 @@
-#profile-form {
-    background-color: rgb(9, 27, 73);
-    color: rgb(245, 245, 245);
-    position: absolute;
-    top: 30%;
+.fav-movie {
+    margin-bottom: 15px;
+
+    figcaption {
+        text-align: center;
+    }
+
+    button.btn {
+        display: block;
+        margin: auto;
+    }
 }
 
-#profile-form #movie-card {
-    color: rgb(9, 27, 73);
+.card {
+    margin-bottom: 15px;
+
+    figure {
+        position: relative;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: wrap;
+        margin: auto;
+        width: 100%;
+
+        img {
+            height: 400px;
+            margin: auto;
+        }
+    }
 }
