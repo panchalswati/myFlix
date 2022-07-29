@@ -10,7 +10,7 @@ Technical Requirements:
 ● The application is written with React Redux
 ● The application uses Bootstrap as a UI library for styling and responsiveness
 ● The application contains a mix of class components and function components
-● The application is hosted online ( https://myflix-site.netlify.app )
+● The application is hosted online ( https://myflix-clients.netlify.app )
 
 ScreenShots:
 Main-view.png
