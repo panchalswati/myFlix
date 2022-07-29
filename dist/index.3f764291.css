@@ -1,0 +1,32 @@
+#bs-override .card-title,
+#bs-override .card-text {
+  color: #000;
+}
+
+#bs-override .custom-movie-card {
+  min-height: 624px;
+  margin-bottom: 30px;
+}
+#bs-override .custom-movie-card .card-img-top {
+  max-height: 500px;
+}
+#bs-override .custom-movie-card .card-body-list {
+  height: 260px;
+}
+
+#bs-override .card-body {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+#bs-override .btn-link {
+  color: #000;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#bs-override .card-title {
+  font-weight: bold;
+}
+/*# sourceMappingURL=index.3f764291.css.map */

@@ -1,0 +1,157 @@
+* {
+  color: rgba(15, 71, 162, 0.945);
+}
+.indiv-view {
+  margin: 3vw 0;
+  text-align: justify;
+}
+
+.indiv-img {
+  height: 25em;
+  object-fit: contain;
+}
+
+.indiv-view-title {
+  height: 3em;
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.button {
+  margin: 10px 15px 0 0;
+}
+
+.button-add-favs:active {
+  transform: scale(1.15);
+}
+.genre-view {
+  text-align: justify;
+}
+
+.left-col {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.right-col {
+  font-size: 18px;
+}
+.director-view {
+  text-align: justify;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.left-col {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.right-col {
+  font-size: 18px;
+}
+.login-form {
+  padding: 4rem 3rem;
+}
+.registration-form {
+  padding: 4rem 3rem;
+}
+
+.reg-button {
+  margin-top: 15px;
+}
+.fav-movie {
+  margin-bottom: 15px;
+}
+.fav-movie figcaption {
+  text-align: center;
+}
+.fav-movie button.btn {
+  display: block;
+  margin: auto;
+}
+
+.card {
+  margin-bottom: 15px;
+}
+.card figure {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  margin: auto;
+  width: 100%;
+}
+.card figure img {
+  height: 400px;
+  margin: auto;
+}
+.cards {
+  height: 540px;
+  margin: 30px 5px;
+}
+
+.cards:hover {
+  box-shadow: 0 0 1px 1px rgb(220, 220, 220);
+  background-color: rgb(250, 251, 255);
+}
+
+.cards-img {
+  height: 300px;
+  object-fit: contain;
+}
+
+.cards-img:hover {
+  box-shadow: 0 0 5px 1px rgb(127, 127, 128);
+}
+
+.cards-title {
+  height: 50px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.div-button-add-favs {
+  text-align: right;
+}
+
+.text-link:hover {
+  font-weight: 500;
+}
+
+@media all and (max-width: 575.98px) {
+  .cards {
+    height: 480px;
+  }
+}
+@media all and (min-width: 575.99px) and (max-width: 767.99px) {
+  .cards {
+    height: 540px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 991.98px) {
+  .cards {
+    height: 580px;
+  }
+}
+@media all and (min-width: 991.99px) {
+  .cards {
+    height: 530px;
+  }
+}
+.my-flix {
+  color: rgb(4, 64, 153);
+}
+
+.bg-col {
+  background-color: rgba(44, 53, 232, 0.05);
+}
+
+.lining {
+  box-shadow: 0 0 3px 1px rgba(75, 75, 74, 0.3);
+}
+/*# sourceMappingURL=index.17d663fa.css.map */

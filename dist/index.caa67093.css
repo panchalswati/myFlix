@@ -1,17 +1,35 @@
 * {
-  font-family: Raleway, sans-serif;
-  line-height: 1.8;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-  background-color: rgb(9, 27, 73);
+  background-color: #000 !important;
+  color: #fff !important;
 }
-.movie-view {
-  color: rgb(245, 245, 245);
+@media screen and (max-width: 768px) {
+  .poster {
+    max-width: 80%;
+  }
 }
-
-.label {
-  font-weight: bold;
+@media screen and (min-width: 768px) {
+  .poster {
+    max-width: 70%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .poster {
+    max-width: 65%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .poster {
+    max-width: 55%;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .poster {
+    max-width: 50%;
+  }
 }
 #login-form {
   background-color: rgb(9, 27, 73);
@@ -19,20 +37,33 @@ body {
   position: absolute;
   top: 30%;
 }
-
-.director-view {
-  color: rgb(245, 245, 245);
-}
-
-.label {
-  font-weight: bold;
-}
 .genre-view {
   color: rgb(245, 245, 245);
 }
 
 .label {
   font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+  .height {
+    height: 31rem;
+  }
+}
+@media (min-width: 768px) {
+  .movie-card {
+    height: 31rem;
+  }
+}
+@media (min-width: 992px) {
+  .movie-card {
+    height: 33rem;
+    width: auto;
+  }
+}
+@media (min-width: 1200px) {
+  .movie-card {
+    height: 31rem;
+  }
 }
 #profile-form {
   background-color: rgb(9, 27, 73);
@@ -44,29 +75,11 @@ body {
 #profile-form #movie-card {
   color: rgb(9, 27, 73);
 }
-
-.main-view {
-  row-gap: 30px;
+#bs-override .director-text {
+  color: #000;
+}
+#bs-override .director-text h1 {
+  margin-bottom: 40px;
 }
 
-#movie-card {
-  background-color: rgb(245, 245, 245);
-  color: rgb(9, 27, 73);
-  height: 100%;
-}
-
-#card-title {
-  font-weight: bold;
-}
-
-.button {
-  border: 1px solid rgb(9, 27, 73);
-  color: rgb(9, 27, 73);
-}
-
-.button:hover {
-  background-color: rgb(9, 27, 73);
-  border: 1px solid rgb(9, 27, 73);
-  color: rgb(245, 245, 245);
-}
 /*# sourceMappingURL=index.caa67093.css.map */
