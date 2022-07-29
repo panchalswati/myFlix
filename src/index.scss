@@ -1,8 +1,15 @@
-* {
-    font-family: Raleway, sans-serif;
-    line-height: 1.8;
+$title-color: rgb(4, 64, 153);
+$background-color: rgba(44, 53, 232, 0.05);
+$box-shadow-color: rgba(75, 75, 74, 0.3);
+
+.my-flix {
+    color: $title-color;
 }
 
-body {
-    background-color: rgb(9, 27, 73);
+.bg-col {
+    background-color: $background-color;
+}
+
+.lining {
+    box-shadow: 0 0 3px 1px $box-shadow-color;
 }
