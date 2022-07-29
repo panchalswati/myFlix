@@ -1,6 +1,12 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
-import { SET_FILTER, SET_MOVIES, SET_USERS } from '../actions/actions';
+import {
+    SET_FILTER,
+    SET_MOVIES,
+    SET_USER,
+    ADD_FAVMOVIE,
+    REM_FAVMOVIE
+} from '../actions/actions';
 
 function visibilityFilter(state = '', action) {
     switch (action.type) {
@@ -11,6 +17,7 @@ function visibilityFilter(state = '', action) {
     }
 }
 
+//Contains switch case for SET_MOVIES, ADD_FAVMOVIE, and REM_FAVMOVIE
 function movies(state = [], action) {
     switch (action.type) {
         case SET_MOVIES:
@@ -20,9 +27,13 @@ function movies(state = [], action) {
     }
 }
 
-function users(state = [], action) {
+function user(state = '', action) {
     switch (action.type) {
-        case SET_USERS:
+        case SET_USER:
+            return action.user || localStorage.getItem('user') || '';
+        case ADD_FAVMOVIE:
+            return action.value;
+        case REM_FAVMOVIE:
             return action.value;
         default:
             return state;
@@ -31,7 +42,8 @@ function users(state = [], action) {
 
 const moviesApp = combineReducers({
     visibilityFilter,
-    movies
+    movies,
+    user
 });
 
 export default moviesApp;
